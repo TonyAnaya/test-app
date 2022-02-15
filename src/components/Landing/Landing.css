@@ -1,0 +1,18 @@
+.landing{
+    background-color: rgba(15, 15, 15, 0.8);
+    color:white;
+    border-radius: 30px;
+    margin: 0 auto;
+    height: 80vh;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.instruc{
+    
+    height: 100%;
+}
+.imga{
+    border-radius: 50%;
+    width:100px;
+    margin: 0 auto;
+}
