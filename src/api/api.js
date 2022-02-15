@@ -35,6 +35,18 @@ const apiRegister = async (regis)=>{
     .catch(err => console.log(err)) 
 }
 
+const getData = async (data) =>{
+    return await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='+ data.symbol + '&outputsize=' + data.size +'&apikey='+ data.key, {
+        method: 'GET',
+        headers:{
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(res=>res.json())
+    .catch(err => console.log(err))
+
+}
 
 
-export {apiLogin,searchUser, apiRegister};
+
+export { apiLogin, searchUser, apiRegister, getData };

@@ -2,7 +2,7 @@ import './Landing.css';
 import { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import {apiLogin, searchUser, apiRegister } from '../../api/api';
+import {apiLogin, searchUser, apiRegister, getData} from '../../api/api';
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 function Landing() {
@@ -13,7 +13,23 @@ function Landing() {
     const [user, saveUser]= useLocalStorage("USER",{})  
     const [token, saveToken]= useLocalStorage("TOKEN",{})
 
+// Aqui empieza lo de recibir datos
+    const tomadata = async(event) =>{
+        let res = await getData(event)
+        console.log(res)
+        console.log(res['Meta Data'])
+        console.log(res['Time Series (Daily)'])
+    }
 
+    
+    let data = {
+        symbol: "IBM",
+        size: "compact",
+        key: "1K3D5JIN73XQRKJK"
+    }
+    tomadata(data)
+
+// Aqui termina lo de recibir datos
 
     const register = async (event) =>{
         event.preventDefault()
@@ -22,8 +38,6 @@ function Landing() {
         if(event.target[5].value === event.target[6].value){
             let resul = await searchUser(event.target[4].value)
             let obj = resul.result
-            console.log("objeto")
-            console.log(obj)
             if(!obj){
                 let newRegistro = {
                     name: event.target[0].value + " " + event.target[1].value,
@@ -108,7 +122,6 @@ function Landing() {
             { !loading && (
             <div className="d-grid gap-2">
                 <button type="submit" className="btn btn-primary btn-lg">¡Registrate Ahora!</button>
-                <NavLink className="nav-link" to="/login">Ir a Iniciar Sesion</NavLink>
             </div>
             )}
 
