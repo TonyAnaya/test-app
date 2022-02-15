@@ -51,16 +51,16 @@ function Searchs() {
         let lastClose = Object.values(Object.values(res['Time Series (Daily)'])[1])[3]
         let changes = lastClose-opens
         changes = changes.toFixed(2)
-        let porcentajes = (changes*100)/lastClose
-        porcentajes = porcentajes.toFixed(2)
-        console.log("changes           - " + changes)
-        console.log("open              - " + opens)
-        console.log("last Close        - " + lastClose)
         if(changes >> 0){
             console.log("es positivo")
              signos = "+"
              changes= changes * (-1)
         }
+        let porcentajes = (changes*100)/lastClose
+        porcentajes = porcentajes.toFixed(2)
+        console.log("changes           - " + changes)
+        console.log("open              - " + opens)
+        console.log("last Close        - " + lastClose)
         const newinfo={
             open:opens,
             high:highs,
@@ -105,7 +105,7 @@ function Searchs() {
 
     return (
         <div className="search_fond row">
-            <div className="col-lg-4 offset-4 titulo">Titulo de Contenido</div>
+            <div className="col-lg-12 text-center titulo">Titulo de Contenido</div>
             <div className="container col-12 ">
                 <div className="d-flex justify-content-around text-center">
                     <div className="col-1">Symbol</div>
@@ -119,7 +119,7 @@ function Searchs() {
                 </div>
             </div>
             <div className="container col-12 ">
-                <div className="d-flex justify-content-around align-text-center  text-center">
+                <div className="d-flex justify-content-around text-center">
                     <div className="col-1 ">{data.symbol}</div>
                     <div className="col-1">{info.open}</div>
                     <div className="col-1">{info.high}</div>
@@ -127,7 +127,7 @@ function Searchs() {
                     <div className="col-1">{info.close}</div>
                     <div className="col-1">{info.volume}</div>
                     <div className="col-1">{info.signo}{info.change}</div>
-                    <div className="col-1">{info.porcentaje}%</div>
+                    <div className="col-1">{info.signo}{info.porcentaje}%</div>
                 </div>
             </div>
             <div className="container col-12 ">
@@ -139,7 +139,7 @@ function Searchs() {
                     <div className="col-1">{info2.close}</div>
                     <div className="col-1">{info2.volume}</div>
                     <div className="col-1">{info2.signo}{info2.change}</div>
-                    <div className="col-1">{info2.porcentaje}%</div>
+                    <div className="col-1">{info2.signo}{info2.porcentaje}%</div>
                 </div>
             </div>
             <div className="container col-12 ">
@@ -151,7 +151,7 @@ function Searchs() {
                     <div className="col-1">{info3.close}</div>
                     <div className="col-1">{info3.volume}</div>
                     <div className="col-1">{info3.signo}{info3.change}</div>
-                    <div className="col-1">{info3.porcentaje}%</div>
+                    <div className="col-1">{info3.signo}{info3.porcentaje}%</div>
                 </div>
             </div>
             <div className="container col-12 ">
@@ -163,7 +163,7 @@ function Searchs() {
                     <div className="col-1">{info4.close}</div>
                     <div className="col-1">{info4.volume}</div>
                     <div className="col-1">{info4.signo}{info4.change}</div>
-                    <div className="col-1">{info4.porcentaje}%</div>
+                    <div className="col-1">{info4.signo}{info4.porcentaje}%</div>
                 </div>
             </div>
             <div className="container col-12 ">
@@ -175,7 +175,7 @@ function Searchs() {
                     <div className="col-1">{info5.close}</div>
                     <div className="col-1">{info5.volume}</div>
                     <div className="col-1">{info5.signo}{info5.change}</div>
-                    <div className="col-1">{info5.porcentaje}%</div>
+                    <div className="col-1">{info5.signo}{info5.porcentaje}%</div>
                 </div>
             </div>
         </div>
