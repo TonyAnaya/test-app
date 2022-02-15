@@ -1,6 +1,5 @@
 import './Landing.css';
 import { useState } from 'react';
-import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {apiLogin, searchUser, apiRegister, getData} from '../../api/api';
 import { useLocalStorage } from "../../hooks/useLocalStorage";
@@ -13,23 +12,6 @@ function Landing() {
     const [user, saveUser]= useLocalStorage("USER",{})  
     const [token, saveToken]= useLocalStorage("TOKEN",{})
 
-// Aqui empieza lo de recibir datos
-    const tomadata = async(event) =>{
-        let res = await getData(event)
-        console.log(res)
-        console.log(res['Meta Data'])
-        console.log(res['Time Series (Daily)'])
-    }
-
-    
-    let data = {
-        symbol: "IBM",
-        size: "compact",
-        key: "1K3D5JIN73XQRKJK"
-    }
-    tomadata(data)
-
-// Aqui termina lo de recibir datos
 
     const register = async (event) =>{
         event.preventDefault()

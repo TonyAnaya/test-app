@@ -40,6 +40,9 @@ function Nav() {
         <NavLink className="nav-link" to="/">
         <h1>Sherpa Brokers</h1>
         </NavLink>
+        <NavLink className="navbar-nav liga" to="/search">
+          <div className="">Search</div>
+        </NavLink>
         { dataExist && (
           <>
             <h1 >{data.name}</h1>
@@ -63,6 +66,7 @@ function Nav() {
               }}> Log In</a>
             </div>
          )}
+         
       </div>
   </nav>
   );

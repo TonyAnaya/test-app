@@ -1,0 +1,16 @@
+.titulo{
+    padding:auto;
+    margin:0 auto;
+    font-size:250%;
+}
+.search_fond{
+    background-color: rgba(15, 15, 15, 0.8);
+    color:white;
+    border-radius: 30px;
+    margin: 0 auto;
+    height: 80vh;
+    padding-top: 5%;
+}
+.dat{
+    background-color: gray;
+}
