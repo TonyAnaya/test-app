@@ -15,43 +15,46 @@ function Searchs() {
         symbol: "GOOG",
         size: "compact",
         key: "1K3D5JIN73XQRKJK",
-        id: 1
+        id: 1,
+        time:"TIME_SERIES_DAILY"
     }
     let data2 = {
         symbol: "AAPL",
         size: "compact",
         key: "1K3D5JIN73XQRKJK",
-        id: 2
+        id: 2,
+        time:"TIME_SERIES_DAILY"
     }
     let data3 = {
         symbol: "NFLX",
         size: "compact",
         key: "1K3D5JIN73XQRKJK",
-        id: 3
+        id: 3,
+        time:"TIME_SERIES_DAILY"
     }
     let data4 = {
         symbol: "AMZN",
         size: "compact",
         key: "1K3D5JIN73XQRKJK",
-        id: 4
+        id: 4,
+        time:"TIME_SERIES_DAILY"
     }
     let data5 = {
         symbol: "TSLA",
         size: "compact",
         key: "1K3D5JIN73XQRKJK",
-        id: 5
+        id: 5,
+        time:"TIME_SERIES_DAILY"
     }
 
     async function tomadata(datita) {
         let signos = ""
+        let obj ={}
         let res = await getData(datita)
-        if(res){
-            console.log(res)
+        if(res != undefined && res != null){
+            obj = SearchObject(res)
         }
-        let obj = SearchObject(res)
-        console.log("changes           - " + obj.changes)
-        console.log("open              - " + obj.opens)
-        console.log("last Close        - " + obj.lastClose)
+
         const newinfo = obj
 
         switch (datita.id) {

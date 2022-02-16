@@ -36,7 +36,7 @@ const apiRegister = async (regis)=>{
 }
 
 const getData = async (data) =>{
-    return await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='+ data.symbol + '&outputsize=' + data.size +'&apikey='+ data.key, {
+    return await fetch('https://www.alphavantage.co/query?function=' + data.time + '&symbol='+ data.symbol + '&outputsize=' + data.size +'&apikey='+ data.key, {
         method: 'GET',
         headers:{
             'Content-Type': 'application/json',
@@ -44,7 +44,6 @@ const getData = async (data) =>{
     })
     .then(res=>res.json())
     .catch(err => console.log(err))
-
 }
 
 

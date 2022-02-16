@@ -39,8 +39,7 @@ function Login() {
                     let userData = window.atob(data[1])
                     saveUser(userData)
                     console.log(window.localStorage.USER)
-                    navigate("/")
-                    
+                    navigate("/search")
             }
         }
     }
