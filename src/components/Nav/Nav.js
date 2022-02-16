@@ -13,6 +13,7 @@ function Nav() {
   document.body.style.backgroundImage = "url('https://www.teahub.io/photos/full/298-2987595_stock-market.png')";
   let dataExist = false
   let dataFotoExist = false
+  let admin = false
 
   let data = JSON.parse(window.localStorage.USER)
   if(data.name){
@@ -29,6 +30,9 @@ function Nav() {
   }else{
     dataFotoExist = false
   }
+  if(data.account == "admin"){
+    admin = true
+  }
 
 
   return (
@@ -43,6 +47,14 @@ function Nav() {
         <NavLink className="navbar-nav nav-link liga" to="/search">
           <div className="">Search</div>
         </NavLink>
+
+        {admin &&(
+
+          <NavLink className="navbar-nav nav-link liga" to="/data">
+            <div className="">Data</div>
+          </NavLink>
+        )}
+
         { dataExist && (
           <>
             <h1 >{data.name}</h1>

@@ -1,7 +1,8 @@
 import './Busqueda.css'
-import {getData} from '../../api/api';
+import {getData, upDate} from '../../api/api';
 import {BusqueGraph} from './BusqueGraph'
 import { useState } from 'react';
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 // Step 2 - Include the react-fusioncharts component
 import ReactFC from "react-fusioncharts";
@@ -19,6 +20,9 @@ import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
 
 function Busqueda() {
+    
+    const [token, saveToken]= useLocalStorage("TOKEN",{})
+    const [user, saveUser]= useLocalStorage("USER",{})
 
     const [chartConfigs,setChar] =useState({})
 
@@ -45,7 +49,7 @@ function Busqueda() {
         let objkeys = Object.keys(res[time])
         let arreglObjeto = BusqueGraph(objvar,objkeys)
 
-    // Create a JSON object to store the chart configurations
+        // Create a JSON object to store the chart configurations
         const chartConfig = {
             type: "column2d", // The chart type
             width: "700", // Width of the chart
@@ -66,6 +70,14 @@ function Busqueda() {
             }
         };
         setChar(chartConfig)
+
+        let data = JSON.parse(window.localStorage.USER)
+        let updt = {
+            email: data.email,
+            busqueda: event.target[0].value
+        }
+        console.log(updt)
+        upDate(updt)
 
     }
 

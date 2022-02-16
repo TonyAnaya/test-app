@@ -8,6 +8,7 @@ const app = express()
 const registro  = require("./view/registro")
 const search = require("./view/search")
 const login = require("./view/login")
+const update = require("./view/update")
 
 
 
@@ -30,3 +31,4 @@ serverStart()
 registro(app);
 search(app);
 login(app);
+update(app);

@@ -17,7 +17,7 @@ const Search = () => {
 
   return (
     <div className="container" >
-      <Searchs /> 
+      {/*<Searchs /> */}
       <br/>
       <br/>
         { dataExist && (
