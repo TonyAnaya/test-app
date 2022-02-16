@@ -61,4 +61,17 @@ const upDate = async (updt)=>{
 }
 
 
-export { apiLogin, searchUser, apiRegister, getData, upDate };
+
+const listBusqueda = async () =>{
+    return await fetch('http://localhost:3001/listbusqueda',{
+        method: 'GET',
+        headers:{
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(res=>res.json())
+    .catch(err => console.log(err))
+}
+
+
+export { apiLogin, searchUser, apiRegister, getData, upDate, listBusqueda };

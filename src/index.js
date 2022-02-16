@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { Login } from './pages/Login'
 import { Home } from './pages/Home'
 import { Search } from './pages/Search'
+import { Data } from './pages/Data'
 import {Nav} from './components/Nav/Nav';
 
 ReactDOM.render(
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route path="/" element={<Home />} />   
       <Route path="/login" element={<Login />} /> 
       <Route path="/search" element={<Search />} /> 
+      <Route path="/data" element={<Data />} /> 
 
     </Routes>
   </BrowserRouter>

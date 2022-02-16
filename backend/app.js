@@ -9,6 +9,7 @@ const registro  = require("./view/registro")
 const search = require("./view/search")
 const login = require("./view/login")
 const update = require("./view/update")
+const lista = require("./view/lista")
 
 
 
@@ -32,3 +33,4 @@ registro(app);
 search(app);
 login(app);
 update(app);
+lista(app);
