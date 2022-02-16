@@ -7,7 +7,6 @@ function Datas() {
 
     const newListBusqueda = async () => {
         const listBak = await listBusqueda()
-        console.log(listBak)
         setList(listBak)
    }
 
